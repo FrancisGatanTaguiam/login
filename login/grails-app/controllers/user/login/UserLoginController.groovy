@@ -11,18 +11,23 @@ class UserLoginController {
     
     
     def returnUsernameAndPassword(UserLogin userLogin){
-        if (userLogin == null) {
-            notFound()
+        
+        def user = UserLogin.findByUsernameAndPassword(userLogin.username ,  userLogin.password)
+       
+        if (user != null) {
+            request.withFormat {
+                form multipartForm {
+                    flash.message = message(code: 'default.created.message', args: [message(code: 'userLogin.label', default: 'UserLogin'), userLogin.id])
+                    redirect userLogin
+                }
+            '*' { respond userLogin, [status: CREATED] }
+            }
+        } else{
+            render status: HttpStatus.NOT_FOUND
             return
         }
         
-        request.withFormat {
-            form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'userLogin.label', default: 'UserLogin'), userLogin.id])
-                redirect userLogin
-            }
-            '*' { respond userLogin, [status: CREATED] }
-        }
+   
     }
     
     def index(Integer max) {
