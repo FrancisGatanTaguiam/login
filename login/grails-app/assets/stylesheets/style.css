@@ -1,0 +1,54 @@
+.editContainerInLogin{
+	margin-top: 90px;
+	padding-top: 50px;
+	max-width: 450px;
+	border: solid 1px #bbb;
+}
+
+.btnEdit{
+	color: #fff ;
+	background-color: #ffaf40;
+}
+
+
+.editContainerInLogin h2{
+        padding-left: 5px;
+        padding-right: 5px;
+	margin-top: -105px;
+	margin-left: 25px;
+	margin-bottom: 50px;
+	font-size: 22px;
+	color: #555;
+	background-color: #ffffff;
+}
+
+textarea:focus, 
+textarea.form-control:focus, 
+input.form-control:focus, 
+input[type=text]:focus, 
+input[type=password]:focus, 
+input[type=email]:focus, 
+input[type=number]:focus, 
+[type=text].form-control:focus, 
+[type=password].form-control:focus, 
+[type=email].form-control:focus, 
+[type=tel].form-control:focus, 
+[contenteditable].form-control:focus {
+  
+  outline: none;
+  box-shadow:none !important;
+  border:1px solid #ffaf40;
+
+}
+
+
+
+.dropdown:hover>.dropdown-menu {
+  display: block;
+}
+
+
+.dropdownMenuButton{
+	float: right;
+	top:0;
+}
